@@ -3,15 +3,19 @@ module HelperMethods
     click_link_or_button(content)
   end
 
-  def login
+  def login(user = nil)
     visit home_path
-    user = User.create :username => 'test_user', :password => 'abcd1234', :password_confirmation => 'abcd1234'
+    user ||= User.create :username => 'test_user', :password => 'abcd1234', :password_confirmation => 'abcd1234'
     click 'Login'
-    fill_in 'Username', :with => 'test_user'
-    fill_in 'Password', :with => 'abcd1234'
+    fill_in 'Username', :with => user.username
+    fill_in 'Password', :with => user.password
     click 'Login'
-    current_path.should eql(root_path)
+    should_be_on admin_path
     user
+  end
+  
+  def should_be_on(path)
+    current_path.should eql(path)
   end
   
   def current_path

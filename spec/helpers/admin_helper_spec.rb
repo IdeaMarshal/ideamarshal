@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe HomeHelper do
+describe AdminHelper do
 end

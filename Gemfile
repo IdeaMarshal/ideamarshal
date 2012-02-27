@@ -40,7 +40,7 @@ gem 'ruby-debug19', :require => 'ruby-debug'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'capybara-webkit'
+  #gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'launchy'
 end

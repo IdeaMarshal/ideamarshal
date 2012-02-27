@@ -1,11 +1,14 @@
 IdeaMarshal::Application.routes.draw do
-  namespace :admin do resources :users end
-
+  namespace :admin do
+    resources :users
+  end
+  get 'admin' => 'admin#index', :as => :admin
+  
   get 'login' => 'sessions#new', :as => :login
   post 'sessions/create' => 'sessions#create', :as => :create_session
   get 'logout' => 'sessions#destroy', :as => :logout
   
-  get 'home/index', :as => :home
+  get 'home' => 'home#index', :as => :home
   
   root :to => 'home#index'
 

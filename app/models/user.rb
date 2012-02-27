@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
   
   validates_presence_of :username
   validates_presence_of :password, :on => :create
-  validates_confirmation_of :password, :if => Proc.new {|user| !user.password.blank?}
 end
