@@ -57,7 +57,7 @@ module IdeaMarshal
     config.assets.version = '1.0'
     
     config.generators do |g|
-      g.test_framework :rspec, :views => false, :controllers => false, :requests => false
+      g.test_framework :rspec, :view_specs => false, :controller_specs => false, :request_specs => false
     end
   end
 end
