@@ -1,4 +1,14 @@
 IdeaMarshal::Application.routes.draw do
+  namespace :admin do resources :users end
+
+  get 'login' => 'sessions#new', :as => :login
+  post 'sessions/create' => 'sessions#create', :as => :create_session
+  get 'logout' => 'sessions#destroy', :as => :logout
+  
+  get 'home/index', :as => :home
+  
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

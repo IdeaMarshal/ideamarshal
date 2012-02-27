@@ -1,0 +1,5 @@
+<% if current_user %>
+  Welcome <%= current_user.username %>
+<% else %>
+  <%= link_to 'Login', login_path %>
+<% end %>
