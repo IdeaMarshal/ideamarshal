@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to login_url, :alert => "Invalid Username or Password"
     end
   end
-
+  
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Logged out!"

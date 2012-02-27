@@ -1,23 +1,22 @@
-<h1>Listing users</h1>
+<h1>Listing Users</h1>
 
-<table>
-  <tr>
-    <th>Username</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <%= content_tag_for :tr, user do %>
-    <td><%= user.username %></td>
-    <td><%= link_to 'Show', admin_user_path(user) %></td>
-    <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
-    <td><%= link_to 'Destroy', admin_user_path(user), confirm: 'Are you sure?', method: :delete %></td>
-  <% end %>
-<% end %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <%= content_tag_for :tr, user do %>
+        <td><%= user.username %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_user_path(user), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+      <% end %>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New User', new_admin_user_path %>
+<%= link_to 'New User', new_admin_user_path, :class => 'btn btn-primary' %>

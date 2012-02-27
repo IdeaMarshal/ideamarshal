@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IdeaMarshal</title>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="main" class="container-fluid">
+    <div class="row-fluid">
+      <div id="left-nav" class="span2">
+        <ul class="unstyled">
+          <li><h2>IdeaMarshal Admin</h2></li>
+          <li class="seperator"></li>
+          <li><%= link_to 'Manage Users', admin_users_path %></li>
+          <li><%= link_to 'Manage Pages', admin_pages_path %></li>
+          <li class="seperator"></li>
+          <li><%= link_to "Leave Admin Section", root_path %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        </ul>
+      </div>
+      <div id="body" class="span10">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

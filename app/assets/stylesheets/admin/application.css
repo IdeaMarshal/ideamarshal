@@ -1,0 +1,23 @@
+/*
+  = require_tree .
+*/
+
+#main {
+  padding: 20px;
+}
+
+#left-nav ul li.seperator {
+  height: 15px;
+}
+
+#body h1 {
+  padding-bottom: 15px;
+}
+
+.input-huge {
+  width: 750px;
+}
+
+textarea.input-huge {
+  height: 250px;
+}

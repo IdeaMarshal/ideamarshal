@@ -1,8 +1,7 @@
-<%= form_for([:admin, @page]) do |f| %>
+<%= form_for([:admin, @page], :html => {:class => 'form-horizontal'}) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this admin_page from being saved:</h2>
-
       <ul>
       <% @page.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,20 +9,28 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :url, 'URL' %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :url, 'URL', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :url %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :content, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :content, :class => 'input-huge' %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', admin_pages_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>
