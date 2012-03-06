@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>IdeaMarshal</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="top">
-    <% if current_user %>
-      Welcome <%= current_user.username %>
-    <% else %>
-      <%= link_to 'Login', login_path %>
-    <% end %>
+  <div id="heading">
+    <div id="heading-info">
+      <div class="container">
+        <div class="row-fluid">
+          <div id="logo-container" class="span6">
+            <%= link_to(image_tag('logo.jpg'), root_path) %>
+          </div>
+          <div id="info-container" class="span6">
+            <ul class="unstyled">
+              <li>
+                <%= link_to '#portfolio' do %>
+                  <h3>Work</h3>
+                  <h5>Some examples of our awesome work.</h5>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to '#people' do %>
+                  <h3>People</h3>
+                  <h5>Our awesome team.</h5>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to '#services' do %>
+                  <h3>Services</h3>
+                  <h5>How can we serve you.</h5>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="heading-nav-container">
+      <div class="row-fluid">
+        <div class="container">
+          <div id="heading-social-media-container" class="span6">
+            <div id="heading-social-media">
+              SOCIAL MEDIA LINKS
+            </div>
+          </div>
+          <div class="span6">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <ul class="nav">
+                  <li class="active"><%= link_to 'Home', root_path %></li>
+                  <li><%= link_to 'About Us', '#about_us' %></li>
+                  <li><%= link_to 'Portfolio', '#portfolio' %></li>
+                  <li><%= link_to 'People', '#people' %></li>
+                  <li><%= link_to 'Services', '#services' %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <%= yield %>
 </body>

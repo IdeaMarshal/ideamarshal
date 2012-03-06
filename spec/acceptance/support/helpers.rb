@@ -10,6 +10,7 @@ module HelperMethods
     fill_in 'Username', :with => user.username
     fill_in 'Password', :with => user.password
     click 'Login'
+    save_and_open_page
     should_be_on admin_path
     user
   end

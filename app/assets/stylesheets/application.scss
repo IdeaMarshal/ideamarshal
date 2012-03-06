@@ -1,0 +1,61 @@
+// = require bootstrap
+// = require bootstrap-responsive
+// = require_self
+
+#heading {
+  color: #8D8D8D;
+  background-color: #161616;
+  #heading-nav-container {
+    background-color: #5F5F5F;
+    .span6 {
+      margin: 0 0 0 15px;
+    }
+    .navbar {
+      margin: 0;
+      .navbar-inner {
+        background-color: #5F5F5F;
+        background-image: none;
+        text-align: center;
+        .nav {
+          float: right;
+          margin: 0 -10px 0 0;
+          li a {
+            color: #FFFFFF;
+          }
+          li.active a, li > a:hover {
+            background-color: #E82832;
+          }
+        }
+      }
+    }
+    #heading-social-media-container {
+      #heading-social-media {
+        text-align: left;
+        padding: 10px 10px 11px;
+        line-height: 19px;
+        color: #FFFFFF;
+      }
+    }
+  }
+  #heading-info {
+    padding: 15px 0;
+    #logo-container {
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    #info-container {
+      text-align: right;
+      li {
+        padding: 10px 0;
+      }
+      a {
+        h3, h5 {
+          color: white;
+        }
+        text-decoration: none;
+      }
+    }
+  }
+}
