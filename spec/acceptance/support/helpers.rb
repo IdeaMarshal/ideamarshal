@@ -7,15 +7,20 @@ module HelperMethods
     visit home_path
     user ||= User.create :username => 'test_user', :password => 'abcd1234', :password_confirmation => 'abcd1234'
     click 'Login'
-    fill_in 'Username', :with => user.username
-    fill_in 'Password', :with => user.password
-    click 'Login'
-    should_be_on admin_path
+    within '#loginForm' do
+      fill_in 'Username', :with => user.username
+      fill_in 'Password', :with => user.password
+      click 'Login'
+    end
     user
   end
   
   def should_be_on(path)
     current_path.should eql(path)
+  end
+  
+  def should_not_be_on(path)
+    current_path.should_not eql(path)
   end
   
   def current_path
@@ -41,6 +46,12 @@ module HelperMethods
       paragraph << words[rand(words.length-1)]
     end
     paragraph.join(' ')
+  end
+  
+  def screenshot
+    path = File.join(Rails.root, 'tmp', "webkit_screenshot-#{Time.now.to_i}.png").to_s
+    page.driver.render(path)
+    `open #{path}`
   end
 end
 

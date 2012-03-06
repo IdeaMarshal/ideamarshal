@@ -29,13 +29,10 @@ describe 'Admin Pages', :type => :acceptance do
       'Content' => content
     })
     click 'Create Page'
-    new_page = Page.find_by_url 'new_page'
-    new_page.should_not be_nil
-    should_be_on admin_page_path(new_page)
-    visit admin_pages_path
     page.should have_content('New Page')
     page.should have_content('new_page')
     page.should have_content(content)
+    should_be_on admin_page_path(Page.find_by_url('new_page'))
   end
   
   it 'should be able to edit an existing page' do

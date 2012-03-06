@@ -7,7 +7,8 @@ require 'capybara/rails'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-#Capybara.default_driver = :webkit
+Capybara.default_driver = :webkit
+
 Capybara.server do |app, port|
   require 'rack/handler/webrick'
   Rack::Handler::WEBrick.run(app, :Port => port, :AccessLog => [], :Logger => WEBrick::Log::new(Rails.root.join("log/test_server.log").to_s))

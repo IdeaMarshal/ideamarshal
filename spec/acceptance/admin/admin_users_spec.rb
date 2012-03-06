@@ -27,10 +27,7 @@ describe 'Admin Users', :type => :acceptance do
       'Password confirmation' => 'secret'
     })
     click 'Create User'
-    user = User.find_by_username 'new_user'
-    user.should_not be_nil
-    should_be_on admin_user_path(user)
-    visit admin_users_path
+    should_be_on admin_users_path
     page.should have_content('new_user')
   end
   
@@ -48,10 +45,8 @@ describe 'Admin Users', :type => :acceptance do
       'Password confirmation' => 'new_secret'
     })
     click 'Update User'
-    should_be_on admin_user_path(user)
-    user = User.find user.id
+    should_be_on admin_users_path
     page.should have_content('some_user')
-    user.username.should eql('some_user')
   end
   
   it 'should be able to delete users' do

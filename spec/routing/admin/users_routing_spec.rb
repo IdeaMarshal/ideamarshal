@@ -10,10 +10,6 @@ describe Admin::UsersController do
       get("/admin/users/new").should route_to("admin/users#new")
     end
     
-    it "routes to #show" do
-      get("/admin/users/1").should route_to("admin/users#show", :id => "1")
-    end
-    
     it "routes to #edit" do
       get("/admin/users/1/edit").should route_to("admin/users#edit", :id => "1")
     end
