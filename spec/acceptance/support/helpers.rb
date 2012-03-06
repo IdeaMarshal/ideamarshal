@@ -4,14 +4,14 @@ module HelperMethods
   end
 
   def login(user = nil)
-    visit home_path
+    visit login_path
     user ||= User.create :username => 'test_user', :password => 'abcd1234', :password_confirmation => 'abcd1234'
-    click 'Login'
     within '#loginForm' do
       fill_in 'Username', :with => user.username
       fill_in 'Password', :with => user.password
       click 'Login'
     end
+    should_be_on admin_path
     user
   end
   
