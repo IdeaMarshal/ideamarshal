@@ -60,6 +60,31 @@
   }
 }
 
+#contact-link {
+  top: 450px;
+  right: 0;
+  width: 38px;
+  height: 90px;
+  color: white;
+  cursor: pointer;
+  text-indent: -100000px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 100000;
+  background-color: #E82832;
+  /*margin-left: -7px;*/
+  background: #E82832 url(/assets/contact.png);
+  _position: absolute;
+  _background: #E82832 url(/assets/contact.png);
+  &:hover {
+    width: 52px;
+  }
+}
+
+#contact {
+  display: none;
+}
+
 #body {
   margin-top: 50px;
 }
