@@ -1,0 +1,36 @@
+<%= form_for([:admin, @preference], :html => {:class => 'form-horizontal'}) do |f| %>
+  <% if @preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preference.errors.count, "error") %> prohibited this admin_page from being saved:</h2>
+      <ul>
+      <% @preference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :description %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :content, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :content, :class => 'input-huge' %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', admin_preferences_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

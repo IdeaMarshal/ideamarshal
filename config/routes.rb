@@ -4,6 +4,7 @@ IdeaMarshal::Application.routes.draw do
   namespace :admin do
     resources :users, :except => [:show]
     resources :pages
+    resources :preferences
   end
   get 'admin' => 'admin#index', :as => :admin
   

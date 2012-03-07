@@ -1,0 +1,25 @@
+<h1>Listing Preferences</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @preferences.each do |preference| %>
+      <%= content_tag_for :tr, preference do %>
+        <td><%= preference.name %></td>
+        <td><%= preference.description %></td>
+        <td>
+          <%= link_to 'Show', admin_preference_path(preference), :class => 'btn btn-mini' %>
+          <%= link_to 'Edit', edit_admin_preference_path(preference), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', admin_preference_path(preference), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Preference', new_admin_preference_path, :class => 'btn btn-primary' %>

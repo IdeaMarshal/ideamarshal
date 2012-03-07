@@ -9,6 +9,7 @@ describe 'User', :type => :acceptance do
     user = login
     visit logout_path
     should_be_on root_path
-    page.should have_content('Login')
+    visit admin_path
+    should_be_on login_path
   end
 end
