@@ -1,11 +1,11 @@
-<div id="contact-link" data-toggle="modal" href="#contact">
+<a id="contact-link" data-toggle="modal" href="#contact">
   Contact
-</div>
+</a>
 <div id="contact" class="modal hide fade">
   <div class="modal-header">
     Contact Information
   </div>
   <div class="modal-body">
-    Some contact info
+    <%= Preference.content_for(:contact_info) %>
   </div>
 </div>
