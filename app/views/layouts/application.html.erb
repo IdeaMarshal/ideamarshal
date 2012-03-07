@@ -8,6 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+    <div id="admin-link">
+      <%= link_to "Return to Admin Area", admin_path %>
+    </div>
+  <% end %>
   <div id="heading">
     <div id="heading-info">
       <div class="container">

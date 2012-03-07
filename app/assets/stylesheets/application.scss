@@ -5,32 +5,22 @@
   = require_self
 */
 
+#admin-link {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 130px;
+  margin: 0 0 0 -70px;
+  padding: 5px;
+  background: white;
+  text-align: center;
+}
+
 #heading {
   color: #8D8D8D;
   background-color: #161616;
   #heading-nav-container {
     background-color: #5F5F5F;
-    .span6 {
-      margin: 0 0 0 15px;
-    }
-    .navbar {
-      margin: 0;
-      .navbar-inner {
-        background-color: #5F5F5F;
-        background-image: none;
-        text-align: center;
-        .nav {
-          float: right;
-          margin: 0 -10px 0 0;
-          li a {
-            color: #FFFFFF;
-          }
-          li.active a, li > a:hover {
-            background-color: #E82832;
-          }
-        }
-      }
-    }
     #heading-social-media-container {
       margin: 0 15px 0 0;
       #heading-social-media {
@@ -42,6 +32,24 @@
     }
     #heading-navbar-container {
       margin: 0 0 0 15px;
+      .navbar {
+        margin: 0;
+        .navbar-inner {
+          background-color: #5F5F5F;
+          background-image: none;
+          text-align: center;
+          .nav {
+            float: right;
+            margin: 0 -10px 0 0;
+            li a {
+              color: #FFFFFF;
+            }
+            li.active a, li > a:hover {
+              background-color: #E82832;
+            }
+          }
+        }
+      }
     }
   }
   #heading-info {
