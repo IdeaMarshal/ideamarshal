@@ -1,6 +1,9 @@
-// = require bootstrap
-// = require bootstrap-responsive
-// = require_self
+/*
+  = require bootstrap
+  = require bootstrap-responsive
+  = require bootstrap-custom
+  = require_self
+*/
 
 #heading {
   color: #8D8D8D;
@@ -29,12 +32,16 @@
       }
     }
     #heading-social-media-container {
+      margin: 0 15px 0 0;
       #heading-social-media {
         text-align: left;
         padding: 10px 10px 11px;
         line-height: 19px;
         color: #FFFFFF;
       }
+    }
+    #heading-navbar-container {
+      margin: 0 0 0 15px;
     }
   }
   #heading-info {
@@ -64,25 +71,25 @@
   top: 450px;
   right: 0;
   width: 38px;
-  height: 90px;
+  height: 100px;
   color: white;
   cursor: pointer;
   text-indent: -100000px;
   overflow: hidden;
   position: fixed;
-  z-index: 100000;
+  z-index: 1000;
   background-color: #E82832;
   /*margin-left: -7px;*/
-  background: #E82832 url(/assets/contact.png);
+  background: #E82832 url(/assets/contact.png) no-repeat center left;
   _position: absolute;
-  _background: #E82832 url(/assets/contact.png);
+  _background: #E82832 url(/assets/contact.png) no-repeat center left;
   &:hover {
     width: 52px;
   }
 }
 
 #contact {
-  display: none;
+  
 }
 
 #body {
