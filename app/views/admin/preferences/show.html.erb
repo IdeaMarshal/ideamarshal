@@ -10,8 +10,10 @@
 
 <p>
   <b>Content:</b>
-  <%= @preference.content %>
 </p>
+<div>
+  <%=m @preference.content %>
+</div>
 
 
 <%= link_to 'Edit', edit_admin_preference_path(@preference), :class => 'btn' %>
